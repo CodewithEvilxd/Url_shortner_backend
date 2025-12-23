@@ -36,22 +36,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/urls', urlRoutes);
 app.use('/api/clicks', clickRoutes);
 
-// Root route
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to URL Shortener API',
-    version: '1.0.0',
-    docs: 'https://github.com/CodewithEvilxd/Url_shortner_backend',
-    endpoints: {
-      health: '/api/health',
-      auth: '/api/auth',
-      urls: '/api/urls',
-      clicks: '/api/clicks'
-    }
-  });
-});
-
-// Redirect routes (must be last - catches /:shortCode)
+// Redirect routes (must be last - catches /:shortCode and root)
 app.use('/', redirectRoutes);
 
 // Health check

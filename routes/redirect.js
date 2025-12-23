@@ -92,11 +92,26 @@ const getGeolocation = async (ip) => {
 
 /**
  * GET /:shortCode
- * Redirect to original URL with click tracking
+ * Redirect to original URL with click tracking, or return API info for root
  */
 router.get('/:shortCode', async (req, res) => {
   try {
     const { shortCode } = req.params;
+
+    // Handle root route
+    if (!shortCode) {
+      return res.json({
+        message: 'Welcome to URL Shortener API',
+        version: '1.0.0',
+        docs: 'https://github.com/CodewithEvilxd/Url_shortner_backend',
+        endpoints: {
+          health: '/api/health',
+          auth: '/api/auth',
+          urls: '/api/urls',
+          clicks: '/api/clicks'
+        }
+      });
+    }
 
     // Skip API routes
     if (shortCode === 'api') {
