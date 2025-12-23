@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to URL Shortener API',
     version: '1.0.0',
-    docs: 'https://github.com/izahid19/Url_shortner_backend',
+    docs: 'https://github.com/CodewithEvilxd/Url_shortner_backend',
     endpoints: {
       health: '/api/health',
       auth: '/api/auth',
