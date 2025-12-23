@@ -40,8 +40,6 @@ const urlSchema = new mongoose.Schema({
 });
 
 // Index for faster lookups
-urlSchema.index({ shortUrl: 1 });
-urlSchema.index({ customUrl: 1 });
 urlSchema.index({ userId: 1 });
 
 const Url = mongoose.model('Url', urlSchema);
