@@ -59,6 +59,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
+// Render health check
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Server error:', err);
