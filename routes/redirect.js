@@ -91,24 +91,6 @@ const getGeolocation = async (ip) => {
 };
 
 /**
- * GET /
- * Return API info
- */
-router.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to URL Shortener API',
-    version: '1.0.0',
-    docs: 'https://github.com/CodewithEvilxd/Url_shortner_backend',
-    endpoints: {
-      health: '/api/health',
-      auth: '/api/auth',
-      urls: '/api/urls',
-      clicks: '/api/clicks'
-    }
-  });
-});
-
-/**
  * GET /:shortCode
  * Redirect to original URL with click tracking
  */
